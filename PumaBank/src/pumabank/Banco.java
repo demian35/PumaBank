@@ -8,6 +8,9 @@ package pumabank;
  *
  * @author josed
  */
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 public class Banco extends javax.swing.JFrame {
 
     /**
@@ -15,6 +18,10 @@ public class Banco extends javax.swing.JFrame {
      */
     public Banco() {
         initComponents();
+        this.setTitle("Banco Puma"); //titulo del programa nombre del programa
+        Image img=Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/pngpumas.png")); //imagen que usaremos
+        //ajustaremos el logo para que se vea bien
+        lblpuma.setIcon(new ImageIcon(img.getScaledInstance(lblpuma.getWidth(), lblpuma.getHeight(), Image.SCALE_SMOOTH)));
     }
 
     /**
@@ -26,7 +33,7 @@ public class Banco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblpuma = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -39,8 +46,8 @@ public class Banco extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pngpumas.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 180, 170));
+        lblpuma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pngpumas.png"))); // NOI18N
+        getContentPane().add(lblpuma, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, 180, 170));
 
         jLabel2.setText("BancoPuma");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 90, -1));
@@ -131,7 +138,7 @@ public class Banco extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 440, 510, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 460, 510, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -172,7 +179,6 @@ public class Banco extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -181,5 +187,6 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblpuma;
     // End of variables declaration//GEN-END:variables
 }
