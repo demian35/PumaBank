@@ -22,6 +22,8 @@ public class Banco extends javax.swing.JFrame {
         Image img=Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/pngpumas.png")); //imagen que usaremos
         //ajustaremos el logo para que se vea bien
         lblpuma.setIcon(new ImageIcon(img.getScaledInstance(lblpuma.getWidth(), lblpuma.getHeight(), Image.SCALE_SMOOTH)));
+        //ponemos el icono en la miniatura de la ventana
+        this.setIconImage(img);
     }
 
     /**
