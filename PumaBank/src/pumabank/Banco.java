@@ -69,15 +69,15 @@ public class Banco extends javax.swing.JFrame {
         btnsubmitMovimiento = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        lblnombreclient = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        lbltelefonoclient = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        lbldireccionclient = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        lbltipocuenta = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        lblmontoInicial = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblmovimientos = new javax.swing.JTable();
 
@@ -233,37 +233,32 @@ public class Banco extends javax.swing.JFrame {
         jLabel12.setText("Nombre");
         jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setText("Cliente:");
-        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        lblnombreclient.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel5.add(lblnombreclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 160, 40));
 
         jLabel14.setText("Telefono");
-        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setText("Cliente:");
-        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, -1, -1));
+        lbltelefonoclient.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel5.add(lbltelefonoclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 160, 20));
 
         jLabel16.setText("Direccion");
-        jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel17.setText("Cliente:");
-        jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+        lbldireccionclient.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel5.add(lbldireccionclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 160, 50));
 
         jLabel18.setText("Tipo de Cuenta");
-        jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        jPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel19.setText("Cliente:");
-        jPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, -1, -1));
+        lbltipocuenta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel5.add(lbltipocuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 150, 30));
 
         jLabel20.setText("Monto Inicial");
-        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
+        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel21.setText("Cliente:");
-        jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        lblmontoInicial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPanel5.add(lblmontoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 150, 30));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 260, 260));
 
@@ -362,16 +357,11 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -385,7 +375,12 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbldireccionclient;
+    private javax.swing.JLabel lblmontoInicial;
+    private javax.swing.JLabel lblnombreclient;
     private javax.swing.JLabel lblpuma;
+    private javax.swing.JLabel lbltelefonoclient;
+    private javax.swing.JLabel lbltipocuenta;
     private javax.swing.JTable tblmovimientos;
     private javax.swing.JTextField txtadressclient;
     private javax.swing.JTextField txtmontoInicial;
