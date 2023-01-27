@@ -41,32 +41,32 @@ public class Banco extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtnameclient = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtphoneclient = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtadressclient = new javax.swing.JTextField();
+        btnsubmitclient = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbocuentaClient = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        cbotipoCuenta = new javax.swing.JComboBox<>();
+        btnagregarTipoCuenta = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        txtmontoInicial = new javax.swing.JTextField();
+        btnsubmitCuenta = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cboconsultaClient = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        cboconsultatipoCuenta = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        txtmontoMovimiento = new javax.swing.JTextField();
+        btnsubmitMovimiento = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -79,7 +79,7 @@ public class Banco extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblmovimientos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,31 +98,31 @@ public class Banco extends javax.swing.JFrame {
         jLabel1.setText("Nombre");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 60, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtnameclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtnameclientActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 200, 40));
+        jPanel1.add(txtnameclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 200, 40));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Telefono");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 60, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 70, 200, -1));
+        jPanel1.add(txtphoneclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 70, 200, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Direccion");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 70, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 200, 60));
+        jPanel1.add(txtadressclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 200, 60));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setText("Agregar Cliente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnsubmitclient.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnsubmitclient.setText("Agregar Cliente");
+        btnsubmitclient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnsubmitclientActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+        jPanel1.add(btnsubmitclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 290, 280));
 
@@ -133,37 +133,35 @@ public class Banco extends javax.swing.JFrame {
         jLabel5.setText("Cliente");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 130, 40));
+        jPanel2.add(cbocuentaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 130, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setText("Tipo Cuenta");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 130, 50));
+        jPanel2.add(cbotipoCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 130, 50));
 
-        jButton2.setText("+");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnagregarTipoCuenta.setText("+");
+        btnagregarTipoCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnagregarTipoCuentaActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 30, -1));
+        jPanel2.add(btnagregarTipoCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, 30, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Monto Inicial");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 150, -1));
+        jPanel2.add(txtmontoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 150, -1));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setText("Crear Cuenta");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnsubmitCuenta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnsubmitCuenta.setText("Crear Cuenta");
+        btnsubmitCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnsubmitCuentaActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+        jPanel2.add(btnsubmitCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 260, 270));
 
@@ -187,47 +185,45 @@ public class Banco extends javax.swing.JFrame {
         jLabel8.setText("Cliente");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel4.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 100, 30));
+        jPanel4.add(cboconsultaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 100, 30));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("Tipo de Cuenta");
         jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        cboconsultatipoCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                cboconsultatipoCuentaActionPerformed(evt);
             }
         });
-        jPanel4.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 100, 30));
+        jPanel4.add(cboconsultatipoCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 100, 30));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("Operacion");
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, 20));
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deposito", "Retiro" }));
         jPanel4.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 110, 30));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Monto");
         jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 40, -1, -1));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtmontoMovimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtmontoMovimientoActionPerformed(evt);
             }
         });
-        jPanel4.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 150, -1));
+        jPanel4.add(txtmontoMovimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 150, -1));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton4.setText("Realizar Operacion");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnsubmitMovimiento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnsubmitMovimiento.setText("Realizar Operacion");
+        btnsubmitMovimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnsubmitMovimientoActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 160, -1));
+        jPanel4.add(btnsubmitMovimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 160, -1));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 770, 90));
 
@@ -271,7 +267,7 @@ public class Banco extends javax.swing.JFrame {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 260, 260));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblmovimientos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -282,40 +278,40 @@ public class Banco extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblmovimientos);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 460, 510, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtnameclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnameclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtnameclientActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnsubmitclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitclientActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnsubmitclientActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnagregarTipoCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarTipoCuentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnagregarTipoCuentaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnsubmitCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitCuentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnsubmitCuentaActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void cboconsultatipoCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboconsultatipoCuentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_cboconsultatipoCuentaActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtmontoMovimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmontoMovimientoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtmontoMovimientoActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnsubmitMovimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitMovimientoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnsubmitMovimientoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,14 +349,14 @@ public class Banco extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JButton btnagregarTipoCuenta;
+    private javax.swing.JButton btnsubmitCuenta;
+    private javax.swing.JButton btnsubmitMovimiento;
+    private javax.swing.JButton btnsubmitclient;
+    private javax.swing.JComboBox<String> cboconsultaClient;
+    private javax.swing.JComboBox<String> cboconsultatipoCuenta;
+    private javax.swing.JComboBox<String> cbocuentaClient;
+    private javax.swing.JComboBox<String> cbotipoCuenta;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -389,12 +385,12 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblpuma;
+    private javax.swing.JTable tblmovimientos;
+    private javax.swing.JTextField txtadressclient;
+    private javax.swing.JTextField txtmontoInicial;
+    private javax.swing.JTextField txtmontoMovimiento;
+    private javax.swing.JTextField txtnameclient;
+    private javax.swing.JTextField txtphoneclient;
     // End of variables declaration//GEN-END:variables
 }
