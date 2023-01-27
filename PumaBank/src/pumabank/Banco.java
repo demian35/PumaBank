@@ -265,7 +265,7 @@ public class Banco extends javax.swing.JFrame {
         jLabel21.setText("Cliente:");
         jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 260, 260));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 260, 260));
 
         tblmovimientos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -280,7 +280,7 @@ public class Banco extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblmovimientos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 460, 510, 240));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 510, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
