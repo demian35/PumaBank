@@ -4,6 +4,8 @@
  */
 package pumabank;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author josed
@@ -13,9 +15,19 @@ public class Cliente {
     private String nombre;
     private String telefono;
     private String direccion;
+    //las cuentas que abra el cliente las iremos guardando en el arraylist
+    private ArrayList<Cuenta> miscuentas;
     
-    public Cliente(){}
+    //al momento de crear un cliente instanciamos esta lista de cuentas
+    public Cliente(){
+        miscuentas= new ArrayList<Cuenta>();
     
+    }
+    
+    //cuendo el cliente abra una cuenta la guardaremos en el arraylist
+    public void agregaCuenta(Cuenta cuenta){
+        miscuentas.add(cuenta);
+    }
     
     public String getNombre(){
         return nombre;
@@ -29,6 +41,12 @@ public class Cliente {
         return direccion;
     }
     
+    public ArrayList<Cuenta> getMisCuentas(){
+        return miscuentas;
+    }
+    
+    
+    
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
@@ -39,6 +57,10 @@ public class Cliente {
     
     public void setDireccion(String direccion){
         this.direccion=direccion;
+    }
+    
+    public void setMisCuentas(ArrayList<Cuenta> miscuentas){
+        this.miscuentas=miscuentas;
     }
     
 }
