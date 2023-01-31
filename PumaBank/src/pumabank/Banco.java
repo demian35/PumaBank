@@ -10,12 +10,21 @@ package pumabank;
  */
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 public class Banco extends javax.swing.JFrame {
 
     //Creamos la tablita en donde guardaremos los datos del movimiento realizado
     DefaultTableModel modeloMov= new DefaultTableModel();
+    /**
+     * Para regristrar clientes los guardaremos en un ArrayList
+     * para que cuando se quiera registrar una nueva cuenta se pueda acceder
+     * a los clientrs registrados
+     */
+    ArrayList<Cliente> clientesRegistrados= new ArrayList<Cliente>();
+    
     /**
      * Creates new form Banco
      */
@@ -57,6 +66,7 @@ public class Banco extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtadressclient = new javax.swing.JTextField();
         btnsubmitclient = new javax.swing.JButton();
+        borraCampos = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         cbocuentaClient = new javax.swing.JComboBox<>();
@@ -90,6 +100,8 @@ public class Banco extends javax.swing.JFrame {
         lblmontoInicial = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblmovimientos = new javax.swing.JTable();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,6 +145,15 @@ public class Banco extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnsubmitclient, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+
+        borraCampos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        borraCampos.setText("Borrar Campos");
+        borraCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borraCamposActionPerformed(evt);
+            }
+        });
+        jPanel1.add(borraCampos, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 240, 140, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 290, 280));
 
@@ -287,6 +308,15 @@ public class Banco extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 510, 200));
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setText("Saldo: ");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, 60, -1));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel15.setText("$10,000,000.00 MXN");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 650, 190, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -296,8 +326,39 @@ public class Banco extends javax.swing.JFrame {
 
     private void btnsubmitclientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitclientActionPerformed
         // TODO add your handling code here:
+        //para registrar nada mas intanciamos al cliente
+        //Y recibimos la entrada que el cliente ponga en los campos de registro
+        Cliente c = new Cliente();
+        c.setNombre(txtnameclient.getText());
+        c.setTelefono(txtphoneclient.getText());
+        c.setDireccion(txtadressclient.getText());
+        //agregamos al cliente a la lista
+        clientesRegistrados.add(c);
+        borraFormularioCliente();
+        llenacomboClientes();
     }//GEN-LAST:event_btnsubmitclientActionPerformed
-
+    
+    //reestablecemos los campos 
+    public void borraFormularioCliente(){
+        txtnameclient.setText("");
+        txtphoneclient.setText("");
+        txtadressclient.setText("");
+    }
+    
+    public void llenacomboClientes(){
+        //creamos arreglo en donde guardaremos los clientes que contendra el combo
+        Object clientes[]= new Object[clientesRegistrados.size()];
+        int i=0;
+        for(Cliente c : clientesRegistrados){
+            clientes[i]=c.getNombre();
+            i++;
+        }
+        cbocuentaClient.setModel(new DefaultComboBoxModel(clientes));
+        cboconsultaClient.setModel(new DefaultComboBoxModel(clientes));
+        
+    }
+    
+    
     private void btnagregarTipoCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarTipoCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnagregarTipoCuentaActionPerformed
@@ -317,6 +378,11 @@ public class Banco extends javax.swing.JFrame {
     private void btnsubmitMovimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitMovimientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsubmitMovimientoActionPerformed
+
+    private void borraCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borraCamposActionPerformed
+        // TODO add your handling code here:
+        borraFormularioCliente();
+    }//GEN-LAST:event_borraCamposActionPerformed
 
     /**
      * @param args the command line arguments
@@ -354,6 +420,7 @@ public class Banco extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton borraCampos;
     private javax.swing.JButton btnagregarTipoCuenta;
     private javax.swing.JButton btnsubmitCuenta;
     private javax.swing.JButton btnsubmitMovimiento;
@@ -367,7 +434,9 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
