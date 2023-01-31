@@ -20,6 +20,9 @@ public class Cuenta {
         historial=new ArrayList<Movimiento>();
     }
     
+    public void agregaMovimiento(Movimiento mov){
+        historial.add(mov);
+    }
     
     public String getTipoCuenta(){
         return tipoCuenta;
