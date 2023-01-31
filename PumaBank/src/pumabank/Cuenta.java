@@ -4,6 +4,8 @@
  */
 package pumabank;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author josed
@@ -12,8 +14,11 @@ public class Cuenta {
     
     private String tipoCuenta;
     private double montoInicial;
+    ArrayList<Movimiento> historial;
     
-    public Cuenta(){}
+    public Cuenta(){
+        historial=new ArrayList<Movimiento>();
+    }
     
     
     public String getTipoCuenta(){
