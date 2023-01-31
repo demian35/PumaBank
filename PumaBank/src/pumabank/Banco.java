@@ -11,8 +11,11 @@ package pumabank;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 public class Banco extends javax.swing.JFrame {
 
+    //Creamos la tablita en donde guardaremos los datos del movimiento realizado
+    DefaultTableModel modeloMov= new DefaultTableModel();
     /**
      * Creates new form Banco
      */
@@ -26,6 +29,13 @@ public class Banco extends javax.swing.JFrame {
         this.setIconImage(img);
         //codigo para que el programa salga en la mitad de la pantalla
         this.setLocationRelativeTo(null);
+        //le damos nombre a cada columna de la tabla
+        modeloMov.addColumn("Cuenta");
+        modeloMov.addColumn("Fecha");
+        modeloMov.addColumn("Tipo de Movimiento");
+        modeloMov.addColumn("Monto");
+        //asignamos la tabla a la que acabamos de crear
+        tblmovimientos.setModel(modeloMov);
     }
 
     /**
@@ -275,7 +285,7 @@ public class Banco extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblmovimientos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 510, 240));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 510, 200));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
