@@ -29,12 +29,21 @@ public class Cuenta {
         return montoInicial;
     }
     
+    public ArrayList<Movimiento> getHistorial(){
+        return historial;
+    }
+    
+    
     public void setTipoCuenta(String tipoCuenta){
         this.tipoCuenta=tipoCuenta;
     }
     
     public void setMontoInicial(double montoInicial){
         this.montoInicial=montoInicial;
+    }
+    
+    public void setHistorial(ArrayList<Movimiento> historial){
+        this.historial=historial;
     }
     
     
