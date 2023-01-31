@@ -170,6 +170,11 @@ public class Banco extends javax.swing.JFrame {
         jLabel6.setText("Tipo Cuenta");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
+        cbotipoCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbotipoCuentaActionPerformed(evt);
+            }
+        });
         jPanel2.add(cbotipoCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 130, 50));
 
         btnagregarTipoCuenta.setText("+");
@@ -234,6 +239,11 @@ public class Banco extends javax.swing.JFrame {
         jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, 20));
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deposito", "Retiro" }));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
         jPanel4.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 110, 30));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -383,6 +393,14 @@ public class Banco extends javax.swing.JFrame {
         // TODO add your handling code here:
         borraFormularioCliente();
     }//GEN-LAST:event_borraCamposActionPerformed
+
+    private void cbotipoCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbotipoCuentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbotipoCuentaActionPerformed
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox5ActionPerformed
 
     /**
      * @param args the command line arguments
