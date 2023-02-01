@@ -81,6 +81,7 @@ public class Banco extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtmontoInicial = new javax.swing.JTextField();
         btnsubmitCuenta = new javax.swing.JButton();
+        borraCamposCuenta = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -204,7 +205,16 @@ public class Banco extends javax.swing.JFrame {
         });
         jPanel2.add(btnsubmitCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 260, 270));
+        borraCamposCuenta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        borraCamposCuenta.setText("Reestablecer");
+        borraCamposCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borraCamposCuentaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(borraCamposCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 120, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 260, 290));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -455,6 +465,11 @@ public class Banco extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
+    private void borraCamposCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borraCamposCuentaActionPerformed
+        // TODO add your handling code here:
+        borrarFormularioCuenta();
+    }//GEN-LAST:event_borraCamposCuentaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -492,6 +507,7 @@ public class Banco extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton borraCampos;
+    private javax.swing.JButton borraCamposCuenta;
     private javax.swing.JButton btnagregarTipoCuenta;
     private javax.swing.JButton btnsubmitCuenta;
     private javax.swing.JButton btnsubmitMovimiento;
