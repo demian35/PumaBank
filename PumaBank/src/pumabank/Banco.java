@@ -13,6 +13,7 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class Banco extends javax.swing.JFrame {
 
@@ -24,6 +25,7 @@ public class Banco extends javax.swing.JFrame {
      * a los clientrs registrados
      */
     ArrayList<Cliente> clientesRegistrados= new ArrayList<Cliente>();
+    ArrayList<String> tiposDeCuentas=new ArrayList<String>();
     
     /**
      * Creates new form Banco
@@ -359,6 +361,7 @@ public class Banco extends javax.swing.JFrame {
         //creamos arreglo en donde guardaremos los clientes que contendra el combo
         Object clientes[]= new Object[clientesRegistrados.size()];
         int i=0;
+        //recorremos el arreglo
         for(Cliente c : clientesRegistrados){
             clientes[i]=c.getNombre();
             i++;
@@ -371,8 +374,24 @@ public class Banco extends javax.swing.JFrame {
     
     private void btnagregarTipoCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarTipoCuentaActionPerformed
         // TODO add your handling code here:
+        String tipodeCuenta=JOptionPane.showInputDialog(this,"TIPO DE CUENTA");
+        tiposDeCuentas.add(tipodeCuenta);
+        llenacomboCuenta();
     }//GEN-LAST:event_btnagregarTipoCuentaActionPerformed
 
+    public void llenacomboCuenta(){
+        //creamos un arreglo en donde almacenaremos los tipos de cuentas que el cliente tiene disponibles
+        Object tipoCuentas[]= new Object[tiposDeCuentas.size()];
+        int i=0;
+        //recorremos el arreglo
+        for(String tipo: tiposDeCuentas){
+            tipoCuentas[i]=tipo;
+            i++;
+        }
+        cbotipoCuenta.setModel(new DefaultComboBoxModel(tipoCuentas));
+        cboconsultatipoCuenta.setModel(new DefaultComboBoxModel(tipoCuentas));
+    }
+    
     private void btnsubmitCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsubmitCuentaActionPerformed
