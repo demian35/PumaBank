@@ -10,7 +10,9 @@ package pumabank;
  */
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -26,6 +28,7 @@ public class Banco extends javax.swing.JFrame {
      */
     ArrayList<Cliente> clientesRegistrados= new ArrayList<Cliente>();
     ArrayList<String> tiposDeCuentas=new ArrayList<String>();
+    Cliente cliente;
     
     /**
      * Creates new form Banco
@@ -377,6 +380,7 @@ public class Banco extends javax.swing.JFrame {
         String tipodeCuenta=JOptionPane.showInputDialog(this,"TIPO DE CUENTA");
         tiposDeCuentas.add(tipodeCuenta);
         llenacomboCuenta();
+        //borrarformularioCuenta();
     }//GEN-LAST:event_btnagregarTipoCuentaActionPerformed
 
     public void llenacomboCuenta(){
@@ -392,10 +396,40 @@ public class Banco extends javax.swing.JFrame {
         cboconsultatipoCuenta.setModel(new DefaultComboBoxModel(tipoCuentas));
     }
     
+    //borramos el formulario de cuentas
+
+    
     private void btnsubmitCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsubmitCuentaActionPerformed
         // TODO add your handling code here:
+        //leemos el cliente que esta seleccionado del comboBox y lo usamos
+        cliente=clientesRegistrados.get(cbocuentaClient.getSelectedIndex());
+        Cuenta cuenta = new Cuenta();
+        //registramos y leemos la opcion que este seleccionada en el combo
+        cuenta.setTipoCuenta(tiposDeCuentas.get(cbotipoCuenta.getSelectedIndex()));
+        //le pasamos el monto que queremos depositar casteandolo para que lo lea como cadena
+        cuenta.setMontoInicial(Double.parseDouble(txtmontoInicial.getText()));
+        cliente.agregaCuenta(cuenta);
+        
+        //movimiento del usuario
+        Movimiento m = new  Movimiento();
+        //fecha en la que se realizo la operacion
+        m.setFechaMovimiento(new SimpleDateFormat("dd/mm/aaaa").format(new Date()));
+        m.setTipoMovimiento("Apertura");
+        //le pasamos el monto casteandolo para que lo lea como cadena
+        m.setMonto(Double.parseDouble(txtmontoInicial.getText()));
+        cuenta.agregaMovimiento(m);
+        borrarFormularioCuenta();    
     }//GEN-LAST:event_btnsubmitCuentaActionPerformed
 
+    //metodo para reestablecer el campo de crear cuenta
+    public void borrarFormularioCuenta(){
+        cbocuentaClient.setSelectedIndex(0);
+        cbotipoCuenta.setSelectedIndex(0);
+        txtmontoInicial.setText("");
+        
+    }
+    
+    
     private void cboconsultatipoCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboconsultatipoCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboconsultatipoCuentaActionPerformed

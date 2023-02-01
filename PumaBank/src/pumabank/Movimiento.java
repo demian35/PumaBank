@@ -10,4 +10,37 @@ package pumabank;
  */
 public class Movimiento {
     
+    private String tipoMovimiento;
+    private String fechaMovimiento;
+    private double monto;
+    
+    
+    public Movimiento(){
+    }
+    
+    public String getTipoMovimiento(){
+        return tipoMovimiento;
+    }
+    
+    public String getFechaMovimiento(){
+        return fechaMovimiento;
+    }
+    
+    public double getMonto(){
+        return monto;
+    }
+    
+    public void setTipoMovimiento(String tipoMovimiento){
+        this.tipoMovimiento=tipoMovimiento;
+    }
+    
+    public void setFechaMovimiento(String fechaMovimiento){
+        this.fechaMovimiento=fechaMovimiento;
+    }
+    
+    public void setMonto(double monto){
+        this.monto=monto;
+    }
+    
+    
 }
