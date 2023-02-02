@@ -438,6 +438,7 @@ public class Banco extends javax.swing.JFrame {
         borrarFormularioCuenta();    
         refrescaOpcionesCuenta();
         verMovimientos();
+        verDatos();
     }//GEN-LAST:event_btnsubmitCuentaActionPerformed
 
     //metodo para convertir el tipo monto a cadena y ponerlo en formato de moneda
@@ -459,6 +460,9 @@ public class Banco extends javax.swing.JFrame {
           cuenta=cliente.getMisCuentas().get(cboconsultatipoCuenta.getSelectedIndex());
           lbltipocuenta.setText(cuenta.getTipoCuenta());
           lblmontoInicial.setText(pasaMoneda(cuenta.getMontoInicial()));
+      }else{
+          lbltipocuenta.setText("No hay Cuenta");
+          lblmontoInicial.setText("No hay saldo");
       }
     }
     public void verMovimientos(){//metodo para rellenar la tabla con los datos del usuarii
