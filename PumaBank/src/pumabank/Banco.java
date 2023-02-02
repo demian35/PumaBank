@@ -403,7 +403,7 @@ public class Banco extends javax.swing.JFrame {
             i++;
         }
         cbotipoCuenta.setModel(new DefaultComboBoxModel(tipoCuentas));
-        cboconsultatipoCuenta.setModel(new DefaultComboBoxModel(tipoCuentas));
+       
     }
     
     //borramos el formulario de cuentas
