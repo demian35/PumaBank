@@ -10,6 +10,7 @@ package pumabank;
  */
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,6 +30,7 @@ public class Banco extends javax.swing.JFrame {
     ArrayList<Cliente> clientesRegistrados= new ArrayList<Cliente>();
     ArrayList<String> tiposDeCuentas=new ArrayList<String>();
     Cliente cliente;
+    Cuenta cuenta;
     
     /**
      * Creates new form Banco
@@ -236,6 +238,11 @@ public class Banco extends javax.swing.JFrame {
         jLabel8.setText("Cliente");
         jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
+        cboconsultaClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboconsultaClientActionPerformed(evt);
+            }
+        });
         jPanel4.add(cboconsultaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 100, 30));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -429,8 +436,46 @@ public class Banco extends javax.swing.JFrame {
         m.setMonto(Double.parseDouble(txtmontoInicial.getText()));
         cuenta.agregaMovimiento(m);
         borrarFormularioCuenta();    
+        refrescaOpcionesCuenta();
+        verMovimientos();
     }//GEN-LAST:event_btnsubmitCuentaActionPerformed
 
+    //metodo para convertir el tipo monto a cadena y ponerlo en formato de moneda
+    public String pasaMoneda(double cantidad){
+        cantidad=Math.round(cantidad*100.0)/100.0;
+        DecimalFormat formato= new DecimalFormat("$ #,###.## MXN");
+        return formato.format(cantidad);
+    }
+    
+    public void verDatos(){//imprimimos los datos en el apartado de Datos de cuenta
+        //leemos el cliente que esta seleccionado en el combo
+      cliente=clientesRegistrados.get(cboconsultaClient.getSelectedIndex());
+      lblnombreclient.setText(cliente.getNombre());
+      lbltelefonoclient.setText(cliente.getTelefono());
+      lbldireccionclient.setText(cliente.getDireccion());
+      
+      //si el usuario tiene cuenta imprimimos los datos de dicha cuenta
+      if(cliente.getMisCuentas().size()>0){
+          cuenta=cliente.getMisCuentas().get(cboconsultatipoCuenta.getSelectedIndex());
+          lbltipocuenta.setText(cuenta.getTipoCuenta());
+          lblmontoInicial.setText(pasaMoneda(cuenta.getMontoInicial()));
+      }
+    }
+    public void verMovimientos(){//metodo para rellenar la tabla con los datos del usuarii
+        
+    }
+    
+    public void refrescaOpcionesCuenta(){
+        //verificamos que halla un cliente seleccionado en su combo
+        cliente=clientesRegistrados.get(cboconsultaClient.getSelectedIndex());
+        int i=0;
+        //creamos arraylist de las cuentas que tiene el cliente
+        ArrayList<String> cuentas= new ArrayList<String>();
+        for(Cuenta c: cliente.getMisCuentas()){
+            cuentas.add(c.getTipoCuenta());
+        }
+        cboconsultatipoCuenta.setModel(new DefaultComboBoxModel(cuentas.toArray()));
+    }
     //metodo para reestablecer el campo de crear cuenta
     public void borrarFormularioCuenta(){
         cbocuentaClient.setSelectedIndex(0);
@@ -470,6 +515,14 @@ public class Banco extends javax.swing.JFrame {
         borrarFormularioCuenta();
     }//GEN-LAST:event_borraCamposCuentaActionPerformed
 
+    private void cboconsultaClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboconsultaClientActionPerformed
+        // TODO add your handling code here:
+        refrescaOpcionesCuenta();
+        verMovimientos();
+        verDatos();
+    }//GEN-LAST:event_cboconsultaClientActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
