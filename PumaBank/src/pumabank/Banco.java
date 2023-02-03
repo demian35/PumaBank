@@ -109,7 +109,7 @@ public class Banco extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblmovimientos = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        lbsaldototal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -344,10 +344,10 @@ public class Banco extends javax.swing.JFrame {
         jLabel13.setText("Saldo: ");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, 60, -1));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel15.setText("$10,000,000.00 MXN");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 650, 190, -1));
+        lbsaldototal.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbsaldototal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbsaldototal.setText("$10,000,000.00 MXN");
+        getContentPane().add(lbsaldototal, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 650, 190, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -466,7 +466,6 @@ public class Banco extends javax.swing.JFrame {
       }
     }
     public void verMovimientos(){//metodo para rellenar la tabla con los datos del usuarii
-        
     }
     
     public void refrescaOpcionesCuenta(){
@@ -580,7 +579,6 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
@@ -604,6 +602,7 @@ public class Banco extends javax.swing.JFrame {
     private javax.swing.JLabel lblpuma;
     private javax.swing.JLabel lbltelefonoclient;
     private javax.swing.JLabel lbltipocuenta;
+    private javax.swing.JLabel lbsaldototal;
     private javax.swing.JTable tblmovimientos;
     private javax.swing.JTextField txtadressclient;
     private javax.swing.JTextField txtmontoInicial;

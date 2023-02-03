@@ -14,7 +14,7 @@ public class Cuenta {
     
     private String tipoCuenta;
     private double montoInicial;
-    ArrayList<Movimiento> historial;
+    private ArrayList<Movimiento> historial;
     
     public Cuenta(){
         historial=new ArrayList<Movimiento>();
